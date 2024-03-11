@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CSS-->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!--Fuente Lato-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+    <title>The Simpsons Characters</title>
+  </head>
+
+  <body>
+    <!--Contendor principal-->
+    <div class="container">
+
+      <div class="desktop-container">
+        <!--Imagen-->
+        <div class = "image-container">
+          <img src="./assets/dom-img-02.jpg" alt="Imagen manejo del tiempo">
+        </div>
+
+        <div class="white-container">
+          
+          <!--Inicio-->
+          <div class="header">
+            <p>Fecha</p>
+            <h1>¡Hola! Planifica tu día</h1>
+          </div>
+
+          <!--Input y botones-->
+          <form onsubmit="addList(event)">
+            <input type="text" id="enter" name="lists" placeholder="Ingresa una tarea" required>
+            <button type="submit" class="addButton">+</button>
+            <button type="button" class="deleteAllButton" onclick="deleteAllTasks()">Borrar todo</button>
+          </form>
+
+          <!--Tareas-->
+          <div id = "list-container"></div>
+        </div>
+
+        <div class="attribution">
+            <p>Coded by Mariana Salas</p>
+        </div>
+      </div>
+    </div>
+
+    <!--JavaScript-->
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
