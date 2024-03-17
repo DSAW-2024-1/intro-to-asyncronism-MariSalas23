@@ -93,6 +93,10 @@ body {
         box-sizing: border-box; 
         color: black;
     }
+
+    button {
+        background-color: var(--Yellow);
+    }
 }
 
 .character-container {
@@ -148,4 +152,20 @@ body {
     gap: 1rem;   
     font-size: 0.7rem;
     color: var(--Blue)
+}
+
+/* Hovers */
+
+.random-character-btn:hover {
+    background-image: linear-gradient(to left, hsl(330, 100%, 73%), hsl(191, 99%, 40%));
+    color: white;
+    box-shadow: 0rem 0.5rem 0.5rem hsla(196, 8%, 28%, 0.5);
+}
+
+h2:hover {
+    color:hsl(203, 85%, 41%);
+}
+
+p:hover {
+    color: white;
 }
