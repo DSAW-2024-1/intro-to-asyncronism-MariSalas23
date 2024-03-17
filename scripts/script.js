@@ -1,54 +1,49 @@
-// Función para buscar un personaje random
-async function getRandomQuote() {
-    const url = 'https://thesimpsonsquoteapi.glitch.me/quotes';
-    
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        if (data && data.length > 0) {
-            const randomIndex = Math.floor(Math.random() * data.length);
-            const randomQuote = data[randomIndex];
-            displayRandomQuote(randomQuote);
-        } else {
-            console.log('No se encontraron citas.');
-        }
-    } catch (error) {
-        console.error('Error al obtener citas aleatorias:', error);
-    }
-}
-
-function displayRandomQuote(quote) {
-    const quoteContainer = document.querySelector('.character-container');
-    quoteContainer.innerHTML = `
-        <div class="image-container-character">
-            <img src="${quote.image}" alt="Character Image" style="max-width: 100px;">
-        </div>
-        <div class="text-container-character">
-            <h2>Character:</h2>
-            <p>${quote.character}</p>
-            <h2>Quote:</h2>
-            <p>${quote.quote}</p>
-        </div>
-    `;
-}
-
-// Configuración del botón para buscar un personaje random
 document.addEventListener('DOMContentLoaded', function () {
-    const randomQuoteBtn = document.querySelector('.random-character-btn');
+    const characterInput = document.querySelector('.character');
 
-    randomQuoteBtn.addEventListener('click', function () {
-        getRandomQuote();
+    characterInput.addEventListener('keypress', async function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
+            const characterName = characterInput.value.trim();
+            if (characterName !== '') {
+                try {
+                    const characterData = await fetchCharacterData(characterName);
+                    displayCharacter(characterData);
+                } catch (error) {
+                    console.error('Error fetching character data:', error);
+                    alert('Error fetching character data. Please try again later.');
+                }
+            } else {
+                alert('Please enter a character name.');
+            }
+        }
     });
-});
 
-// Opciones para el número de frases (de 1 a 4)
-function validateNumber() {
-    let select = document.querySelector('.contPhrase');
-    let opcionSeleccionada = parseInt(select.value);
-
-    if (opcionSeleccionada < 1 || opcionSeleccionada > 4) {
-        alert("Seleccione una opción válida entre 1 y 4.");
-        select.value = "";
+    async function fetchCharacterData(name) {
+        const response = await fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?character=${encodeURIComponent(name)}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch character data');
+        }
+        const data = await response.json();
+        if (data.length === 0) {
+            throw new Error('No character data found');
+        }
+        return data[0];
     }
-}
+
+    function displayCharacter(characterData) {
+        const characterContainer = document.querySelector('.character-container');
+        characterContainer.innerHTML = ''; // Limpiar el contenido actual
+        characterContainer.innerHTML = `
+            <div class="image-container-character">
+            <img src="${characterData.image}" alt="Character Image" style="max-width: 100px;">
+            </div>
+            <div class="text-container-character">
+                <h2>Character:</h2>
+                <p>${characterData.character}</p>
+                <h2>Quote:</h2>
+                <p>${characterData.quote}</p>
+            </div>
+        `;
+    }
+});
