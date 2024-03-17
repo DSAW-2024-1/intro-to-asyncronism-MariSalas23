@@ -1,7 +1,7 @@
 :root{
-    --Yellow: hsl(52, 100%, 50%);
+    --Yellow: hsl(52, 100%, 56%);
     --Blue: hsl(203, 85%, 41%);
-    --LightBlue: hsl(199, 99%, 72%);
+    --LightBlue: hsl(330, 100%, 73%);
     --Green: hsl(168, 75%, 36%);
 }
 
@@ -48,7 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--Blue);
-    margin: 1rem;
+    margin: 2rem;
     padding: 1rem;
     border-radius: 2rem;
     border: 0.2rem solid black;
@@ -57,7 +57,7 @@ body {
 .section {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     flex-wrap: wrap;
     padding: 1rem;
 
@@ -85,8 +85,7 @@ body {
         gap: 1rem;
     }
 
-    input,
-    select {
+    input,button,select {
         border-radius: 0.6rem;
         padding: 0.3rem;
         border: 0.15rem solid black;
@@ -98,12 +97,42 @@ body {
 
 .character-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;   
     background-color: var(--LightBlue);
     border-radius: 1rem;
     border: 0.2rem solid black;
     padding: 1rem;
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+
+    .image-container-character {
+        height: 100%;
+        width: auto;
+        padding: 1rem;
+        margin: 1rem;
+        background-color: white;
+        border: 0.2rem solid black;
+        border-radius: 1rem;
+    }
+
+    .text-container-character {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    p {
+        font-weight: 400;
+        color: black;
+    }
 
     h2 {
         font-weight: 700;

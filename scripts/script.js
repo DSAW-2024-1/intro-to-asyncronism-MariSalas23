@@ -1,51 +1,46 @@
-let currentPage = 1;
-    let allCharacters = new Set(); // Conjunto para almacenar nombres de personajes únicos
-
-    async function fetchCharacters(page) {
-      try {
-        const response = await fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=10&page=${page}`);
+// Función para buscar un personaje random
+async function getRandomQuote() {
+    const url = 'https://thesimpsonsquoteapi.glitch.me/quotes';
+    
+    try {
+        const response = await fetch(url);
         const data = await response.json();
-
-        const quoteContainer = document.getElementById('quote-container');
-
-        data.forEach(quote => {
-          const character = quote.character;
-          const quoteText = quote.quote;
-          const imageUrl = quote.image;
-
-          if (!allCharacters.has(character)) {
-            allCharacters.add(character); // Agregar el nombre del personaje al conjunto
-
-            const quoteElement = document.createElement('p');
-            const characterElement = document.createElement('p');
-            const imageElement = document.createElement('img');
-
-            quoteElement.textContent = `"${quoteText}"`;
-            characterElement.textContent = `- ${character}`;
-            imageElement.src = imageUrl;
-            imageElement.alt = "Image of the character";
-
-            quoteContainer.appendChild(quoteElement);
-            quoteContainer.appendChild(characterElement);
-            quoteContainer.appendChild(imageElement);
-          }
-        });
-      } catch (error) {
-        console.error('Error fetching quotes:', error);
-      }
+        
+        if (data && data.length > 0) {
+            const randomIndex = Math.floor(Math.random() * data.length);
+            const randomQuote = data[randomIndex];
+            displayRandomQuote(randomQuote);
+        } else {
+            console.log('No se encontraron citas.');
+        }
+    } catch (error) {
+        console.error('Error al obtener citas aleatorias:', error);
     }
+}
 
-    // Mostrar los primeros personajes al cargar la página
-    window.onload = async function() {
-      await fetchCharacters(currentPage);
-    };
+function displayRandomQuote(quote) {
+    const quoteContainer = document.querySelector('.character-container');
+    quoteContainer.innerHTML = `
+        <div class="image-container-character">
+            <img src="${quote.image}" alt="Character Image" style="max-width: 100px;">
+        </div>
+        <div class="text-container-character">
+            <h2>Character:</h2>
+            <p>${quote.character}</p>
+            <h2>Quote:</h2>
+            <p>${quote.quote}</p>
+        </div>
+    `;
+}
 
-    // Manejar el evento de clic en el botón "Cargar más"
-    const loadMoreButton = document.getElementById('load-more');
-    loadMoreButton.addEventListener('click', async function() {
-      currentPage++;
-      await fetchCharacters(currentPage);
+// Configuración del botón para buscar un personaje random
+document.addEventListener('DOMContentLoaded', function () {
+    const randomQuoteBtn = document.querySelector('.random-character-btn');
+
+    randomQuoteBtn.addEventListener('click', function () {
+        getRandomQuote();
     });
+});
 
 // Opciones para el número de frases (de 1 a 4)
 function validateNumber() {

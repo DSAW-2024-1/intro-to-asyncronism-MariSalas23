@@ -19,17 +19,18 @@
         <img src = "assets/simpson-tittle.jpg" alt = "Título Simpsons">
       </div>
 
+      <!--Contenedor de los filtros y personajes-->
       <div class="blue-container">
         <div class="section">
           <!--Filtros-->
-          <form onsubmit="findCharacter(event)">
+          <form onsubmit="searchCharacter(event)">
             <div class="form-row">
                 <label for="character">Name:</label>
                 <input type="text" class="character" placeholder="Enter the character" required>
             </div>
             <div class="form-row">
-                <label for="phrase">Phrase:</label>
-                <input type="text" class="phrase" placeholder="Enter a phrase" required>
+                <label for="phrase">Quote:</label>
+                <input type="text" class="phrase" placeholder="Enter a quote" required>
             </div>
             <div class="form-row">
                 <label for="contPhrase">Number of phrases:</label>
@@ -40,25 +41,18 @@
                     <option value="4">4</option>
                 </select>
             </div>
+            <div class="form-row">
+              <label for="random-character">Search random:</label>
+              <button class="random-character-btn">Click here!</button>
+            </div>
           </form>
 
-          <div class="character-container">
-
-            <!--Imagen-->
-            <div class = "image-container">
-            </div>
-            <!--Nombre-->
-            <h2>Name:</h2>
-            <p class = "name-character"></p>
-            <!--Nombre-->
-            <h2>Phrase/Phrases:</h2>
-            <ul class = "phrase-character">
-              <li></li>
-            </ul>
-          </div>
+          <!--Contenedor de los personajes-->
+          <div class="character-container"> </div>
         </div>
       </div>
 
+      <!--Autor-->
       <div class="attribution">
         <p>Coded by Mariana Salas</p>
       </div>
