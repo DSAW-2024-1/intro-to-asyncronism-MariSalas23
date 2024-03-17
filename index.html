@@ -14,35 +14,30 @@
     <!--Contendor principal-->
     <div class="container">
 
-      <div class="desktop-container">
+      <!--Inicio-->
+      <div class="header">
+        <h1>The Simpsons</h1>
+      </div>
+
+      <!--Filtros-->
+      <form onsubmit="findCharacter(event)">
+        <label for="email">Email address: <span id="email-error" class="wrong-message" style="display: none;">Valid email required</span></label>
+        <input type="text" id="enter" name="lists" placeholder="Ingresa una tarea" required>
+        <button type="submit" class="addButton">+</button>
+        <button type="button" class="deleteAllButton" onclick="deleteAllTasks()">Borrar todo</button>
+      </form>
+
+      <div id="quote-container"></div>
+      <button id="load-more">Cargar más</button>
+
         <!--Imagen-->
         <div class = "image-container">
           <img src="./assets/dom-img-02.jpg" alt="Imagen manejo del tiempo">
         </div>
 
-        <div class="white-container">
-          
-          <!--Inicio-->
-          <div class="header">
-            <p>Fecha</p>
-            <h1>¡Hola! Planifica tu día</h1>
-          </div>
-
-          <!--Input y botones-->
-          <form onsubmit="addList(event)">
-            <input type="text" id="enter" name="lists" placeholder="Ingresa una tarea" required>
-            <button type="submit" class="addButton">+</button>
-            <button type="button" class="deleteAllButton" onclick="deleteAllTasks()">Borrar todo</button>
-          </form>
-
-          <!--Tareas-->
-          <div id = "list-container"></div>
-        </div>
-
         <div class="attribution">
             <p>Coded by Mariana Salas</p>
         </div>
-      </div>
     </div>
 
     <!--JavaScript-->
