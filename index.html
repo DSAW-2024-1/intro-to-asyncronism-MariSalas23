@@ -19,25 +19,49 @@
         <img src = "assets/simpson-tittle.jpg" alt = "Título Simpsons">
       </div>
 
-      <!--Filtros-->
-      <form onsubmit="findCharacter(event)">
-        <label for="email">Email address: <span id="email-error" class="wrong-message" style="display: none;">Valid email required</span></label>
-        <input type="text" id="enter" name="lists" placeholder="Ingresa una tarea" required>
-        <button type="submit" class="addButton">+</button>
-        <button type="button" class="deleteAllButton" onclick="deleteAllTasks()">Borrar todo</button>
-      </form>
+      <div class="blue-container">
+        <div class="section">
+          <!--Filtros-->
+          <form onsubmit="findCharacter(event)">
+            <div class="form-row">
+                <label for="character">Name:</label>
+                <input type="text" class="character" placeholder="Enter the character" required>
+            </div>
+            <div class="form-row">
+                <label for="phrase">Phrase:</label>
+                <input type="text" class="phrase" placeholder="Enter a phrase" required>
+            </div>
+            <div class="form-row">
+                <label for="contPhrase">Number of phrases:</label>
+                <select class="contPhrase" onchange="validateNumber()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+          </form>
 
-      <div id="quote-container"></div>
-      <button id="load-more">Cargar más</button>
+          <div class="character-container">
 
-        <!--Imagen-->
-        <div class = "image-container">
-          <img src="./assets/dom-img-02.jpg" alt="Imagen manejo del tiempo">
+            <!--Imagen-->
+            <div class = "image-container">
+            </div>
+            <!--Nombre-->
+            <h2>Name:</h2>
+            <p class = "name-character"></p>
+            <!--Nombre-->
+            <h2>Phrase/Phrases:</h2>
+            <ul class = "phrase-character">
+              <li></li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="attribution">
-            <p>Coded by Mariana Salas</p>
-        </div>
+      <div class="attribution">
+        <p>Coded by Mariana Salas</p>
+      </div>
     </div>
 
     <!--JavaScript-->

@@ -46,3 +46,14 @@ let currentPage = 1;
       currentPage++;
       await fetchCharacters(currentPage);
     });
+
+// Opciones para el número de frases (de 1 a 4)
+function validateNumber() {
+    let select = document.querySelector('.contPhrase');
+    let opcionSeleccionada = parseInt(select.value);
+
+    if (opcionSeleccionada < 1 || opcionSeleccionada > 4) {
+        alert("Seleccione una opción válida entre 1 y 4.");
+        select.value = "";
+    }
+}
