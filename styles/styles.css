@@ -8,9 +8,10 @@
 
 /* General */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
     font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
@@ -35,13 +36,14 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     border-bottom: 0.2rem solid black;
     border-left: 0.2rem solid black;
     border-right: 0.2rem solid black;
-
     background-color: var(--Blue);
+
     img {
         height: 30vh;
         width: auto;
@@ -51,18 +53,19 @@ body {
 .blue-container {
     display: flex;
     flex-direction: column;
-    background-color: var(--Blue);
     margin: 2rem;
     padding: 1rem;
+
     border-radius: 2rem;
     border: 0.2rem solid black;
+    background-color: var(--Blue);
 }
 
 .section {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     flex-wrap: wrap;
+    gap: 2rem;
     padding: 1rem;
 
     form {
@@ -70,12 +73,13 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        background-color: var(--Green);
-        border: 0.2rem solid black;
+
         width: 100%;
         height: auto;
-        border-radius: 1rem;
         padding: 2rem;
+        border-radius: 1rem;
+        background-color: var(--Green);
+        border: 0.2rem solid black;
     }
     
     label {
@@ -90,10 +94,10 @@ body {
     }
 
     input,button {
-        border-radius: 0.6rem;
         padding: 0.3rem;
-        border: 0.15rem solid black;
         width: 100%;
+        border-radius: 0.6rem;
+        border: 0.15rem solid black;
         box-sizing: border-box; 
         color: black;
     }
@@ -108,11 +112,12 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;   
-    background-color: var(--Pink);
+    gap: 1rem;  
+
+    padding: 1rem;
     border-radius: 1rem;
     border: 0.2rem solid black;
-    padding: 1rem;
+    background-color: var(--Pink);
 
     img {
         height: 100%;
@@ -124,9 +129,10 @@ body {
         width: auto;
         padding: 1rem;
         margin: 1rem;
+
         background-color: white;
-        border: 0.2rem solid black;
         border-radius: 1rem;
+        border: 0.2rem solid black;
     }
 
     .text-container-character {
@@ -162,7 +168,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    color: var(--Blue)
+    color: var(--Blue);
 }
 
 /* Hovers */
