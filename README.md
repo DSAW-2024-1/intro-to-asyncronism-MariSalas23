@@ -1,13 +1,31 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/IzcH6WD-)
 # Desarrollo de Aplicaciones Web
 ## Introducción al Asíncronismo
 
+## Nombre
+Mariana Salas Gutiérrez
+
+## Link
+https://dsaw-2024-1.github.io/intro-to-asyncronism-MariSalas23/
+
+## Imágenes
+
+Inicio
+![Vista inicio](./assets/start.jpg)
+
+Búsqueda
+![Vista búsqueda](./assets/search.jpg)
+
+Hovers
+![Vista hovers](./assets/hover.jpg)
+![Vista hovers](./assets/hover-2.jpg)
+![Vista hovers](./assets/hover-3.jpg)
 
 ## Funcionalidades
 
 - Crear una aplicación web que se comunique con la API propuesta: https://thesimpsonsquoteapi.glitch.me/
 - Esta aplicación debe permitir consultar información de diferentes maneras, es obligatorio que de cada consulta se muestre en la aplicación desplegada: la frase dicha, el nombre del personaje y la foto del personaje.
 - Debe llamar al menos 3 endpoints diferentes, usted decide cuáles y de qué forma.
-
 
 ## Requisitos
 

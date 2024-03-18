@@ -1,0 +1,187 @@
+/* Colores */
+:root{
+    --Yellow: hsl(52, 100%, 56%);
+    --Blue: hsl(203, 85%, 41%);
+    --Pink: hsl(330, 100%, 73%);
+    --Green: hsl(168, 75%, 36%);
+}
+
+/* General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Para que ocupe el 100% de la pantalla */
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--Yellow);
+}
+
+/* Estilos de los diferentes elementos */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom: 0.2rem solid black;
+    border-left: 0.2rem solid black;
+    border-right: 0.2rem solid black;
+    background-color: var(--Blue);
+
+    img {
+        height: 30vh;
+        width: auto;
+    }
+}
+
+.blue-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 1rem;
+
+    border-radius: 2rem;
+    border: 0.2rem solid black;
+    background-color: var(--Blue);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: var(--Green);
+        border: 0.2rem solid black;
+    }
+    
+    label {
+        font-weight: 700;
+        color: var(--Yellow);
+    }
+    
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    input,button {
+        padding: 0.3rem;
+        width: 100%;
+        border-radius: 0.6rem;
+        border: 0.15rem solid black;
+        box-sizing: border-box; 
+        color: black;
+    }
+
+    button {
+        background-color: var(--Yellow);
+    }
+}
+
+.character-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;  
+
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.2rem solid black;
+    background-color: var(--Pink);
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+
+    .image-container-character {
+        height: 100%;
+        width: auto;
+        padding: 1rem;
+        margin: 1rem;
+
+        background-color: white;
+        border-radius: 1rem;
+        border: 0.2rem solid black;
+    }
+
+    .text-container-character {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .quote {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    p {
+        font-weight: 400;
+        color: black;
+    }
+
+    h2 {
+        font-weight: 700;
+        color: var(--Yellow);
+    }
+}
+
+/* Autor */
+.attribution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    color: var(--Blue);
+}
+
+/* Hovers */
+.random-character-btn:hover {
+    background-image: linear-gradient(to left, hsl(330, 100%, 73%), hsl(191, 99%, 40%));
+    color: white;
+    box-shadow: 0rem 0.5rem 0.5rem hsla(196, 8%, 28%, 0.5);
+}
+
+h2:hover {
+    color:hsl(203, 85%, 41%);
+}
+
+p:hover {
+    color: white;
+}

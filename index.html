@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CSS-->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!--Fuente Lato-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+    <title>The Simpsons Characters</title>
+  </head>
+
+  <body>
+    <!--Contendor principal-->
+    <div class="container">
+
+      <!--Inicio-->
+      <div class="header">
+        <img src = "assets/simpson-tittle.jpg" alt = "Título Simpsons">
+      </div>
+
+      <!--Contenedor de los filtros y personajes-->
+      <div class="blue-container">
+        <div class="section">
+          <!--Filtros-->
+          <form>
+            <div class="form-row">
+                <label for="character">Name:</label>
+                <input type="text" class="character" placeholder="Enter the character" required>
+            </div>
+            <div class="form-row">
+                <label for="phrase">Quote:</label>
+                <input type="text" class="phrase" placeholder="Enter a quote" required>
+            </div>
+            <div class="form-row">
+                <label for="cont">Number of phrases:</label>
+                <input type="text" class="cont" placeholder="Enter a number" required>
+            </div>
+            <div class="form-row">
+              <label for="random-character">Search random:</label>
+              <button class="random-character-btn" type="button">Click here!</button>
+            </div>
+          </form>
+
+          <!--Contenedor de los personajes-->
+          <div class="character-container"> </div>
+        </div>
+      </div>
+
+      <!--Autor-->
+      <div class="attribution">
+        <p>Coded by Mariana Salas</p>
+      </div>
+    </div>
+
+    <!--JavaScript-->
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
