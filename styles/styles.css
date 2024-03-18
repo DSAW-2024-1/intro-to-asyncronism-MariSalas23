@@ -69,13 +69,13 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         background-color: var(--Green);
         border: 0.2rem solid black;
         width: 100%;
         height: auto;
         border-radius: 1rem;
-        padding: 1rem;
+        padding: 2rem;
     }
     
     label {
@@ -89,7 +89,7 @@ body {
         gap: 1rem;
     }
 
-    input,button,select {
+    input,button {
         border-radius: 0.6rem;
         padding: 0.3rem;
         border: 0.15rem solid black;
@@ -130,6 +130,14 @@ body {
     }
 
     .text-container-character {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .quote {
         display: flex;
         flex-direction: column;
         gap: 1rem;

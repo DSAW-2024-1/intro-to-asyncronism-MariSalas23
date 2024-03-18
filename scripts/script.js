@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const phraseInput = document.querySelector('.phrase');
     const characterContainer = document.querySelector('.character-container');
     const randomCharacterButton = document.querySelector('.random-character-btn');
+    const contInput = document.querySelector('.cont');
 
     // Función para buscar con el input del nombre
     characterInput.addEventListener('keypress', async function (e) {
@@ -53,6 +54,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Función para buscar con cont
+    contInput.addEventListener('keypress', async function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const count = parseInt(contInput.value); 
+            if (count >= 1 && count <= 5) {
+                try {
+                    const characterName = characterInput.value.trim();
+                    const characterData = await fetchCharacterData(characterName);
+                    const quotes = await fetchQuotesForCharacter(characterName, count);
+                    displayCharacterWithQuotes(characterData, quotes); 
+                } catch (error) {
+                    console.error('Error fetching character data:', error);
+                    alert('Error fetching character data. Please try again later.');
+                }
+            } else {
+                alert('Please enter a number between 1 and 5.');
+            }
+        }
+    });
+
     // Función para buscar un personaje aleatorio en la API
     async function fetchRandomQuoteData() {
         const url = 'https://thesimpsonsquoteapi.glitch.me/quotes';
@@ -96,7 +118,22 @@ document.addEventListener('DOMContentLoaded', function () {
         return matchingQuote;
     }
 
-    // Función para realizar la solicitud con reintento en caso de error
+    // Función para buscar las frases de un personaje específico
+    async function fetchQuotesForCharacter(name, count) {
+        const url = `https://thesimpsonsquoteapi.glitch.me/quotes?character=${encodeURIComponent(name)}&count=${count}`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Failed to fetch quote data for character');
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            throw new Error('Error fetching quote data for character');
+        }
+    }
+
+    // Función repetir en caso de error
     async function fetchQuoteDataWithRetry(phrase, maxAttempts = 5) {
         let attempt = 0;
         while (attempt < maxAttempts) {
@@ -140,5 +177,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>${quoteData.quote}</p>
             </div>
         `;
+    }
+
+    function displayCharacterWithQuotes(characterData, quotes) {
+        characterContainer.innerHTML = '';
+        characterContainer.innerHTML += `
+            <div class="image-container-character">
+                <img src="${characterData.image}" alt="Character Image" style="max-width: 100px;">
+            </div>
+            <div class="text-container-character">
+                <h2>Character:</h2>
+                <p>${characterData.character}</p>
+            </div>
+        `;
+        quotes.forEach(quote => {
+            characterContainer.innerHTML += `
+                <div class="quote">
+                    <h2>Quote:</h2>
+                    <p>${quote.quote}</p>
+                </div>
+            `;
+        });
     }
 });
