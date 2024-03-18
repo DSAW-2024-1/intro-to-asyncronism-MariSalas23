@@ -10,6 +10,17 @@ https://dsaw-2024-1.github.io/intro-to-asyncronism-MariSalas23/
 
 ## Imágenes
 
+Inicio
+![Vista inicio](./assets/start.jpg)
+
+Búsqueda
+![Vista búsqueda](./assets/search.jpg)
+
+Hovers
+![Vista hovers](./assets/hover.jpg)
+![Vista hovers](./assets/hover-2.jpg)
+![Vista hovers](./assets/hover-3.jpg)
+
 ## Funcionalidades
 
 - Crear una aplicación web que se comunique con la API propuesta: https://thesimpsonsquoteapi.glitch.me/
