@@ -1,10 +1,12 @@
+/* Colores */
 :root{
     --Yellow: hsl(52, 100%, 56%);
     --Blue: hsl(203, 85%, 41%);
-    --LightBlue: hsl(330, 100%, 73%);
+    --Pink: hsl(330, 100%, 73%);
     --Green: hsl(168, 75%, 36%);
 }
 
+/* General */
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +16,14 @@
     font-weight: 400;
 }
 
+/* Para que ocupe el 100% de la pantalla */
 body {
     height: 100vh;
     width: 100vw;
     background-color: var(--Yellow);
 }
 
+/* Estilos de los diferentes elementos */
 .container {
     display: flex;
     flex-direction: column;
@@ -105,7 +109,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1rem;   
-    background-color: var(--LightBlue);
+    background-color: var(--Pink);
     border-radius: 1rem;
     border: 0.2rem solid black;
     padding: 1rem;
@@ -144,18 +148,16 @@ body {
     }
 }
 
+/* Autor */
 .attribution {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    gap: 1rem;   
-    font-size: 0.7rem;
     color: var(--Blue)
 }
 
 /* Hovers */
-
 .random-character-btn:hover {
     background-image: linear-gradient(to left, hsl(330, 100%, 73%), hsl(191, 99%, 40%));
     color: white;
