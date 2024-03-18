@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'Enter') {
             e.preventDefault();
             const count = parseInt(contInput.value); 
-            if (count >= 1 && count <= 5) {
+            if (count >= 1 && count <= 3) {
                 try {
                     const characterName = characterInput.value.trim();
                     const characterData = await fetchCharacterData(characterName);
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert('Error fetching character data. Please try again later.');
                 }
             } else {
-                alert('Please enter a number between 1 and 5.');
+                alert('Please enter a number between 1 and 3.');
             }
         }
     });
